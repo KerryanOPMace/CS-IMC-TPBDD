@@ -44,7 +44,14 @@ with pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE=
         i = 0
         for row in rows:
             # Créer un objet Node avec comme label Film et les propriétés adéquates
-            # A COMPLETER
+            idFilm, primaryTitle, startYear = row
+
+            # Créer un dictionnaire représentant le nœud Film
+            n = {
+                "idFilm": idFilm,
+                "primaryTitle": primaryTitle,
+                "startYear": startYear
+            }
             importData.append(n)
             i += 1
 
